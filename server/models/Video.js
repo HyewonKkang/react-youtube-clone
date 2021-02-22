@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const videoSchema = mongoose.Schema({
     writer: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'User'
     },
     title: {
@@ -11,7 +11,7 @@ const videoSchema = mongoose.Schema({
         maxlength: 50
     },
     description: {
-        type: Number
+        type: String
     },
     privacy: {
         type: Number,
@@ -32,7 +32,7 @@ const videoSchema = mongoose.Schema({
     thumbnail: {
         type: String
     }
-}, { timestamps: true })
+}, { timestamps: true });
 
 const Video = mongoose.model('Video', videoSchema);
 
