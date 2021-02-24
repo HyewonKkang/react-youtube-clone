@@ -3,11 +3,11 @@ import Axios from 'axios';
 
 function SideVideo() {
 
-    const [sideVideos, setSideVideos] = useState([])
+    const [SideVideos, setSideVideos] = useState([]);
 
     useEffect(() => {
 
-        Axios.post('/api/video/getVideos')
+        Axios.get('/api/video/getVideos')
         .then(response => {
             if(response.data.success) {
                 console.log(response.data.videos)
@@ -19,7 +19,7 @@ function SideVideo() {
 
     }, []);
 
-    const renderSideVideo = sideVideos.map((video, index) => {
+    const renderSideVideo = SideVideos.map((video, index) => {
         var minutes = Math.floor(video.duration / 60);
         var seconds = Math.floor(video.duration - minutes * 60);
     
